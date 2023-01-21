@@ -1,5 +1,7 @@
 package com.narvane.customer;
 
+import com.narvane.clients.fraud.FraudCheckResponse;
+import com.narvane.clients.fraud.FraudClient;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Service;
 public class CustomerService {
 
     private final CustomerRepository customerRepository;
+    private final FraudClient fraudClient;
 
     public void registerCustomer(CustomerRegistrationRequest request) {
         Customer customer = Customer.builder()
@@ -18,7 +21,11 @@ public class CustomerService {
 
         // TODO: email valid
         // TODO email not taken
-        customerRepository.save(customer);
+        customerRepository.saveAndFlush(customer);
+
+        FraudCheckResponse fraudCheckResponse = fraudClient.isFraudster(customer.getId());
+
+        // TODO: Send notification
     }
 
 }

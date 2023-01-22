@@ -25,6 +25,7 @@ public class NotificationController {
                 Notification.builder()
                         .message(notificationRequest.message())
                         .sentAt(LocalDateTime.now())
+                        .sender("System")
                         .toCustomerId(notificationRequest.toCustomerId())
                         .toCustomerEmail(notificationRequest.toCustomerEmail())
                 .build()

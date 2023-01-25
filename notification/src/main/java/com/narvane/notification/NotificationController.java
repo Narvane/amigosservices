@@ -1,4 +1,4 @@
-package com.narvane;
+package com.narvane.notification;
 
 import com.narvane.clients.notification.NotificationRequest;
 import lombok.AllArgsConstructor;
@@ -21,15 +21,7 @@ public class NotificationController {
     @PostMapping
     void sendNotification(@RequestBody NotificationRequest notificationRequest) {
         log.info("New notification... {}", notificationRequest);
-        service.sendNotification(
-                Notification.builder()
-                        .message(notificationRequest.message())
-                        .sentAt(LocalDateTime.now())
-                        .sender("System")
-                        .toCustomerId(notificationRequest.toCustomerId())
-                        .toCustomerEmail(notificationRequest.toCustomerEmail())
-                .build()
-        );
+        service.sendNotification(notificationRequest);
     }
 
 }

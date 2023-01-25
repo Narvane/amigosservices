@@ -1,4 +1,4 @@
-package com.narvane;
+package com.narvane.fraud;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

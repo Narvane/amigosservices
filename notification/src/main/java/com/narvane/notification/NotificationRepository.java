@@ -1,4 +1,4 @@
-package com.narvane;
+package com.narvane.notification;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

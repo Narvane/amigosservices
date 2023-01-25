@@ -1,4 +1,4 @@
-package com.narvane;
+package com.narvane.fraud;
 
 import com.narvane.clients.fraud.FraudCheckResponse;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.narvane;
+package com.narvane.fraud;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

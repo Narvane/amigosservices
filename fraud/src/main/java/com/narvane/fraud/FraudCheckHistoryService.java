@@ -1,4 +1,4 @@
-package com.narvane;
+package com.narvane.fraud;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
